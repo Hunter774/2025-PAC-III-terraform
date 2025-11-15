@@ -1,5 +1,9 @@
 # Ignorar archivos y carpetas pesadas
 .terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
 *.exe
 *.zip
 *.tar.gz
