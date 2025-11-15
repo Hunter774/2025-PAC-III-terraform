@@ -1,0 +1,9 @@
+# Ignorar archivos y carpetas pesadas
+.terraform/
+*.exe
+*.zip
+*.tar.gz
+*.png
+*.jpg
+*.jpeg
+.vscode/
