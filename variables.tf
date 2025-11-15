@@ -15,10 +15,10 @@ variable "project_name" {
 }
 
 variable "location" {
-  description = "Región de Azure"
+  description = "Region de Azure"
   type        = string
-  default     = "centralus"
 }
+
 
 variable "sql_admin_user" {
   description = "Usuario administrador del servidor SQL"

@@ -31,12 +31,7 @@ Durante el despliegue se presentaron restricciones propias de la suscripción ed
 
 La arquitectura propuesta separa las cargas OLTP y OLAP. La capa OLTP se diseñó sobre SQL Server para gestionar operaciones transaccionales, pero fue bloqueada por políticas de suscripción. La capa OLAP se implementó parcialmente con un Storage Account para datos analíticos y un Data Factory para orquestación ETL. El Data Warehouse no fue desplegado, pero se contempla como parte del diseño escalable.
 
-- El mayor desafío fue manejar dependencias implícitas: por ejemplo, la BD debía existir antes de que el ETL pudiera consultarla. Esto se resolvió con `depends_on`.
-- Separar OLTP de OLAP fue clave: si las consultas analíticas pesadas corren sobre la BD de reservas, se afecta la disponibilidad del sistema transaccional.
-- Usar Data Factory como servicio de orquestación es más confiable que un script manual, ya que permite programar, escalar y monitorear procesos ETL de forma centralizada.
-
 
 # Reflexion
 
 Este proyecto fue más que un ejercicio técnico: fue una prueba de resiliencia frente a restricciones inesperadas, errores del proveedor y políticas de suscripción que limitaron el despliegue. A pesar de ello, se logró validar la arquitectura, adaptar el código a las condiciones reales y documentar cada paso con claridad. Terraform no solo permitió automatizar la infraestructura, sino también entender cómo interactúan los servicios de Azure en escenarios OLTP y OLAP. El resultado es una base sólida que puede escalarse fácilmente en entornos productivos, y una experiencia que refuerza la importancia de la paciencia, la estrategia y el aprendizaje continuo en la ingeniería de software.
-
