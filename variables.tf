@@ -1,11 +1,34 @@
-
-variable "location" {
-  description = "Region (despues lo cambio :v)"
+variable "subscription_id" {
+  description = "ID de la suscripción de Azure"
   type        = string
-  default     = "eastus2"
 }
 
-variable "resource_group_name" {
-  description = "Nombre del resource group principal (Despues lo cambio :v)"
+variable "tenant_id" {
+  description = "ID del tenant de Azure AD"
   type        = string
+}
+
+variable "project_name" {
+  description = "Nombre base del proyecto"
+  type        = string
+  default     = "vehiculos-blindados"
+}
+
+variable "location" {
+  description = "Región de Azure"
+  type        = string
+  default     = "centralus"
+}
+
+variable "sql_admin_user" {
+  description = "Usuario administrador del servidor SQL"
+  type        = string
+  default     = "adminuser"
+}
+
+variable "sql_admin_password" {
+  description = "Contraseña administrador del servidor SQL"
+  type        = string
+  sensitive   = true
+  default     = "Password1234!"
 }
